@@ -1,0 +1,1 @@
+﻿var app = angular.module('mvcEmployeeApp', ['ui.grid', 'ui.grid.pagination']);
