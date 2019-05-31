@@ -1,0 +1,30 @@
+﻿@model MVC.Data.Models.Employee
+
+@{
+    ViewBag.Title = "Employees Details";
+}
+
+<h2>Employees Details</h2>
+
+<table class="table">
+    <tr>
+        <td><b>Name:</b></td>
+        <td>@Model.Name</td>
+    </tr>
+    <tr>
+        <td><b>Address:</b></td>
+        <td>@Model.Address</td>
+    </tr>
+    <tr>
+        <td><b>Phone number:</b></td>
+        <td>@Model.PhoneNumber</td>
+    </tr>
+    <tr>
+        <td><b>Department:</b></td>
+        <td>@Model.Department.Name</td>
+    </tr>
+</table>
+@Html.ActionLink("Back to Employees list", "Index", new { id = Model.DeptId }) | 
+@Html.ActionLink("AllEmployees", "IndexAll")
+
+

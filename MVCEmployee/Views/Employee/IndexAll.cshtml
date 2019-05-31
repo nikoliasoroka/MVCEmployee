@@ -1,0 +1,85 @@
+﻿@model IEnumerable<MVC.Data.Models.Employee>
+
+@{
+    ViewBag.Title = "All employees";
+}
+
+<h2>All employees</h2>
+
+<div ng-app="mvcEmployeeApp" ng-controller="employeeController">
+
+    <button ng-click="create()" class="btn btn-info">Create new</button>
+    <br /><br />
+
+    <div ng-init="getEmployees()" ui-grid="gridOptions" ui-grid-pagination></div>
+
+</div>
+
+
+@*<div class="row">
+        <div class="bs-example" data-example-id="table-within-panel">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Employees list</h3>
+                </div>
+                <div ng-init="getEmployees()">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>
+                                    #
+                                </th>
+                                <th>
+                                    First Name
+                                </th>
+                                <th>
+                                    Address
+                                </th>
+                                <th>
+                                    PhoneNumber
+                                </th>
+                                <th>
+                                    DeptId
+                                </th>
+                                <th>
+                                    DeptName
+                                </th>
+                                <th>
+                                    <button ng-click="create()" class="btn btn-info">Create new</button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="emp in employees | orderBy:'Name'">
+                                <th>
+                                    {{$index+1}}
+                                </th>
+                                <td>
+                                    <span>{{emp.Name}}</span>
+                                </td>
+                                <td>
+                                    <city-is></city-is>
+                                </td>
+                                <td>
+                                    <span>{{emp.PhoneNumber}}</span>
+                                </td>
+                                <td>
+                                    <span>{{emp.DeptId | getDeptName}}</span>
+                                </td>
+                                <td>
+                                    <span>{{emp.Department.Name}}</span>
+                                </td>
+                                <td>
+                                    <span ng-click="details(emp)" class="glyphicon glyphicon-search"></span> |
+                                    <span ng-click="edit(emp)" class="glyphicon glyphicon-edit"></span> |
+                                    <span ng-click="delete(emp)" class="glyphicon glyphicon-trash"></span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@Scripts.Render("~/bundles/employeeController")

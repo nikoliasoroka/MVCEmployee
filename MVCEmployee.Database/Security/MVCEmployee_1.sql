@@ -1,0 +1,3 @@
+﻿CREATE LOGIN [MVCEmployee]
+    WITH PASSWORD = N'RnypgwV4aY|tfxwdvi2u&{WhmsFT7_&#$!~<ibwEGeanhfhr', SID = 0x55494A2434286E488305CBDB1DD696D2, DEFAULT_LANGUAGE = [us_english], CHECK_POLICY = OFF;
+

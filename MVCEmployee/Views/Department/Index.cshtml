@@ -1,0 +1,61 @@
+﻿@model IEnumerable<MVC.Data.Models.Department>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create") |*@ 
+    @Html.ActionLink("AllEmployees", "IndexAll", "Employee")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.ActionLink(item.Name, "Index", "Employee", new { id = item.DeptId }, null)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.DeptId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.DeptId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.DeptId })
+        </td>
+    </tr>
+}
+
+</table>
+
+<div id="demo" class="text-info" style="display:none">
+    <script>document.write(Date())</script>
+</div>
+<button class="btn btn-info" onclick="showTime()">Time on/off</button>
+
+<script>
+    function showTime() {
+        var x = document.getElementById('demo');
+        if (x.style.display === "none") {
+            x.style.display = 'block';
+        }
+        else {
+            x.style.display = 'none';
+        }
+    };
+    //(function () {
+    //    alert("IIFE");
+    //})();
+
+    //sayHello();
+    //sayGoodbye();
+    var person1 = { name: 'Marvin', age: 42, size: '2xM' };
+    var person2 = { name: 'Zaphod', age: 42000000000, size: '1xS' };
+    var sayHello = function () { alert('Hello, ' + this.name); };
+    var sayGoodbye = function () { alert('Goodbye, ' + this.name); };
+</script>

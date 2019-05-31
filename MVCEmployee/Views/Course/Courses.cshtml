@@ -1,0 +1,76 @@
+﻿@model IEnumerable<MVC.Data.Models.Course>
+
+@{
+    ViewBag.Title = "Courses";
+}
+
+<h2>All Courses</h2>
+
+<div ng-app="mvcEmployeeApp" ng-controller="courseController" class="row">
+
+    <div ui-grid="gridOptions"></div>
+
+    <div class="container">
+        <br />
+        <br />
+        <input type="text" placeholder="Search Course" ng-model="searchCourse.Name" />
+        <br />
+        <br />
+        <div>
+            <table class="table">
+                <tr ng-repeat="course in courses | filter : searchCourse">
+                    <td>{{$index+1}}</td>
+                    <td>{{course.Name}}</td>
+                    <td>{{course.Location}}</td>
+                    <td ng-repeat="teacher in course.Teachers">
+                        <span class="alert-success">{{teacher.FirstName + ' ' + teacher.LastName}}</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/site/controllers/courseController.js"></script>
+
+@*<h2>Courses</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Teachers)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Location)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Teachers)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.CourseId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseId })
+                </td>
+            </tr>
+        }
+
+    </table>*@

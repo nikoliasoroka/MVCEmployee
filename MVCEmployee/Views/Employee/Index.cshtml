@@ -1,0 +1,55 @@
+﻿@model IEnumerable<MVC.Data.Models.Employee>
+
+@{
+    ViewBag.Title = "Employees List";
+}
+
+<h2>Employees List</h2>
+
+<p>
+    @*@Html.ActionLink("Create New", "Create") |*@ 
+    @Html.ActionLink("AllEmployees", "IndexAll")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Department.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Department.Name)
+            </td>
+            <td>
+                @Html.ActionLink(item.Name, "Details", new { id = item.EmpId })
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.EmpId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.EmpId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.EmpId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+@Html.ActionLink("Back to Departments list", "Index", "Department")

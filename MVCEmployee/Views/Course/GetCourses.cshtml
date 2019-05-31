@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "GetCourses";
+}
+
+<h2>GetCourses</h2>
+
+<div ng-app="mvcEmployeeApp" ng-controller="courseController" class="row">
+
+    <div class="container">
+        <br />
+        <br />
+        <input type="text" placeholder="Search Course" ng-model="searchCourse" />
+        <br />
+        <div>
+            <table class="table">
+                <tr ng-repeat="r in courses | filter : searchCourse">
+                    <td>{{r.CourseId}}</td>
+                    <td>{{r.Name}}</td>
+                    <td>{{r.Location}}</td>
+                    <td>{{r.Teachers}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/site/controllers/courseController.js"></script>
