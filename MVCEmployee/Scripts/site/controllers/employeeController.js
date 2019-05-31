@@ -21,7 +21,7 @@
             { name: '#', maxWidth: 80, enableFiltering: false, enableSorting: false, cellTemplate: '<span>{{rowRenderIndex+1}}</span>' },
             { name: 'Name' },
             { name: 'Address', enableFiltering: false, cellTemplate: '<city-is></city-is>' },
-            { name: 'PhoneNumber', enableFiltering: false },
+            { name: 'PhoneNumber', enableFiltering: true },
             { name: 'DeptId', enableFiltering: false, cellTemplate: '<span>{{ row.entity.DeptId | getDeptName }}</span>' },
             { name: 'Department.Name', displayName: 'Department' },
             {
