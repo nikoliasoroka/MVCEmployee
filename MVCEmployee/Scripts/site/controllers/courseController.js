@@ -28,5 +28,6 @@ app.service('courseService', ['$http', function ($http) {
     courseService.getCourses = function () {
         return $http.get('/Course/GetCourses');
     };
+
     return courseService;
 }]);
