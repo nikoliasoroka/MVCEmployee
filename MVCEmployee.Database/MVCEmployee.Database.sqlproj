@@ -141,4 +141,7 @@
       <QuotedIdentifier>On</QuotedIdentifier>
     </Build>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="MVCEmployee.Database.publish.xml" />
+  </ItemGroup>
 </Project>
